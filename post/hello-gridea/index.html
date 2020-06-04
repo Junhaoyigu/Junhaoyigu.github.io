@@ -8,8 +8,8 @@
 <meta name="keywords" content="君豪个人博客">
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
-<title>Hello Gridea | 君豪的个人博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1591231360358">
+<title>Hello Gridea | 君豪的博客</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1591258321642">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -60,7 +60,7 @@
         <div class="site-title">
           
             <a href="/" class="brand">
-              <span>君豪的个人博客</span>
+              <span>君豪的博客</span>
             </a>  
           
         </div>
@@ -211,19 +211,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -238,6 +238,25 @@
       </div>
     
   
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+        
+          
+            <a class="social-img" href="#">
+              <img src="\media\images\custom-array-imgSocials-1591234187874-socialImg.png" />
+              <i class="fa fa-qq" title="QQ" ></i>
+            </a>
+          
+            <a class="social-img" href="#">
+              <img src="\media\images\custom-array-imgSocials-1591234188144-socialImg.png" />
+              <i class="fa fa-weixin" title="微信" ></i>
+            </a>
+          
+        
+      </div>
+    </div>
   
 
 
@@ -1085,6 +1104,179 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/ssm-kuang-jia-de-huan-jing-da-jian/"" data-c="
+          &lt;p&gt;SSM（Spring+SpringMVC+MyBatis）框架集由Spring、SpringMVC、MyBatis三个开源框架整合而成，常作为数据源较简单的web项目的框架。&lt;br&gt;
+其中spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。&lt;br&gt;
+SpringMVC分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。&lt;br&gt;
+MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持久层框架。&lt;br&gt;
+页面发送请求给控制器，控制器调用业务层处理逻辑，逻辑层向持久层发送请求，持久层与数据库交互，后将结果返回给业务层，业务层将处理逻辑发送给控制器，控制器再调用视图展现数据。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;我们先学习下SSM框架的环境搭建。&lt;br&gt;
+首先我们先创建一个动态项目，名字随意，我这里就起名“SSMDemo”。服务器我选择的是Tomcat8.5+jdk1.8.module version的版本我选择的是3.1，这套组合比较稳定。&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591253916048.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后一直next，之后有个创建web.xml的地方，打钩。&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591254421833.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后项目就创建完成了。如果忘记了最后那个打钩生成web.xml，可以选择手动生成，这个东西后面会用到。&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591254599023.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后我们就要开始配置SSM框架了，首先我们把jar包导进来。素材我会发到我的公众号“君豪说代码”中&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591254771567.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后配置web.xml。代码如下：&lt;/p&gt;
+&lt;!-- 配置spring容器 --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;context-param&amp;gt;
+	&amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
+	&amp;lt;param-value&amp;gt;classpath:spring/applicationContext-*.xml&amp;lt;/param-value&amp;gt;
+&amp;lt;/context-param&amp;gt;
+&amp;lt;!-- 配置监听器加载spring --&amp;gt;
+&amp;lt;listener&amp;gt;
+&amp;lt;listener-class&amp;gt;org.springframework.web.context.ContextLoaderListener&amp;lt;/listener-class&amp;gt;
+&amp;lt;/listener&amp;gt;
+&amp;lt;!-- 前端控制器 --&amp;gt;
+&amp;lt;servlet&amp;gt;
+	&amp;lt;servlet-name&amp;gt;springmvc&amp;lt;/servlet-name&amp;gt;
+	&amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&amp;gt;
+	&amp;lt;init-param&amp;gt;
+		&amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
+		&amp;lt;param-value&amp;gt;classpath:spring/spring-mvc.xml&amp;lt;/param-value&amp;gt;
+	&amp;lt;/init-param&amp;gt;
+	&amp;lt;!-- 初始化当前servlet的开关 --&amp;gt;
+	&amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;
+&amp;lt;/servlet&amp;gt;
+&amp;lt;servlet-mapping&amp;gt;
+	&amp;lt;servlet-name&amp;gt;springmvc&amp;lt;/servlet-name&amp;gt;
+	&amp;lt;url-pattern&amp;gt;*.do&amp;lt;/url-pattern&amp;gt;
+&amp;lt;/servlet-mapping&amp;gt;
+&amp;lt;!-- 解决中文乱码 --&amp;gt;
+&amp;lt;filter&amp;gt;
+	&amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt;
+	&amp;lt;filter-class&amp;gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&amp;gt;
+	&amp;lt;init-param&amp;gt;
+		&amp;lt;param-name&amp;gt;encoding&amp;lt;/param-name&amp;gt;
+		&amp;lt;param-value&amp;gt;utf-8&amp;lt;/param-value&amp;gt;
+	&amp;lt;/init-param&amp;gt;
+	&amp;lt;init-param&amp;gt;
+		&amp;lt;param-name&amp;gt;forceEncoding&amp;lt;/param-name&amp;gt;
+		&amp;lt;param-value&amp;gt;true&amp;lt;/param-value&amp;gt;
+	&amp;lt;/init-param&amp;gt;
+&amp;lt;/filter&amp;gt;
+&amp;lt;filter-mapping&amp;gt;
+	&amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt;
+	&amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt;
+&amp;lt;/filter-mapping&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后在src下创建两个folder，一个是mybatis,一个是spring。&lt;br&gt;
+在mybatis包下创建SqlMapConfig.xml。代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE configuration PUBLIC &amp;quot;-//mybatis.org//DTD Config 3.0//EN&amp;quot; &amp;quot;http://mybatis.org/dtd/mybatis-3-config.dtd&amp;quot; &amp;gt;
+&amp;lt;configuration&amp;gt;
+&amp;lt;!-- 设置实体类的别名 --&amp;gt;
+&amp;lt;typeAliases&amp;gt;
+&amp;lt;package name=&amp;quot;com.mhys.crm.pojo&amp;quot;/&amp;gt;
+&amp;lt;/typeAliases&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在spring包下配置jdbc.properties数据库连接的配置，这里需要你改成你自己的数据库和密码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/crm?characterEncoding=utf-8
+jdbc.username=root
+jdbc.password=123456
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在spring包下配置applicationContext-dao.xml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
+xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot;
+xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+xmlns:mvc=&amp;quot;http://www.springframework.org/schema/mvc&amp;quot;
+xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-4.2.xsd 
+http://www.springframework.org/schema/mvc 
+http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd &amp;quot;&amp;gt;
+&amp;lt;!-- 配置并读取properies文件 --&amp;gt;
+&amp;lt;context:property-placeholder
+	location=&amp;quot;classpath:jdbc.properies&amp;quot; /&amp;gt;
+&amp;lt;!-- 配置数据源 --&amp;gt;
+&amp;lt;bean id=&amp;quot;dataSource&amp;quot;
+	class=&amp;quot;com.alibaba.druid.pool.DruidDataSource&amp;quot;&amp;gt;
+	&amp;lt;property name=&amp;quot;driverClassName&amp;quot; value=&amp;quot;${jdbc.driver}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+	&amp;lt;property name=&amp;quot;url&amp;quot; value=&amp;quot;${jdbc.url}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+	&amp;lt;property name=&amp;quot;username&amp;quot; value=&amp;quot;${jdbc.username}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+	&amp;lt;property name=&amp;quot;password&amp;quot; value=&amp;quot;${jdbc.password}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+&amp;lt;/bean&amp;gt;
+&amp;lt;!-- 配置SqlSessionFactory --&amp;gt;
+&amp;lt;bean class=&amp;quot;org.Mybatis.spring.SqlSessionFactoryBean&amp;quot;&amp;gt;
+	&amp;lt;!-- 设置mybatis核心配置文件 --&amp;gt;
+	&amp;lt;property name=&amp;quot;configLocation&amp;quot;
+		value=&amp;quot;classpath:mybatis/SqlMapConfig.xml&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+	&amp;lt;!-- 设置数据源 --&amp;gt;
+	&amp;lt;property name=&amp;quot;dataSource&amp;quot; ref=&amp;quot;dataSource&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+&amp;lt;/bean&amp;gt;
+&amp;lt;!-- 配置Mapper扫描 --&amp;gt;
+&amp;lt;bean class=&amp;quot;ory.Mybatis.spring.mapper.MapperScannerConfigurer&amp;quot;&amp;gt;
+	&amp;lt;!-- 设置mapper扫描包 --&amp;gt;
+	&amp;lt;property name=&amp;quot;basePackage&amp;quot; value=&amp;quot;com.mhys.crm.dao&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+&amp;lt;/bean&amp;gt;
+&amp;lt;/beans&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在spring包下配置applicationContext-dao.xml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
+xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot;
+xmlns:tx=&amp;quot;http://www.springframework.org/schema/tx&amp;quot;
+xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+xmlns:aop=&amp;quot;http://www.springframework.org/schema/aop&amp;quot;
+xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-4.2.xsd 
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-4.2.xsd 
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.2.xsd &amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在spring包下配置applicationContext-service.xml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- 配置service层扫描 --&amp;gt;
+&amp;lt;context:component-scan base-package=&amp;quot;com.mhys.crm.service&amp;quot;&amp;gt;&amp;lt;/context:component-scan&amp;gt;
+&amp;lt;!-- 配置事务管理器 --&amp;gt;
+&amp;lt;bean id=&amp;quot;transactionManager&amp;quot; class=&amp;quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&amp;quot;&amp;gt;
+	&amp;lt;property name=&amp;quot;dataSource&amp;quot; ref=&amp;quot;dataSource&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+&amp;lt;/bean&amp;gt;
+&amp;lt;!-- 开启注解方式管理aop事务 --&amp;gt;
+&amp;lt;tx:annotation-driven transaction-manager=&amp;quot;transactionManager&amp;quot;/&amp;gt;
+&amp;lt;/beans&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在spring包下配置spring-mvc.xml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
+xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot;
+xmlns:tx=&amp;quot;http://www.springframework.org/schema/tx&amp;quot;
+xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+xmlns:mvc=&amp;quot;http://www.springframework.org/schema/mvc&amp;quot;
+xmlns:aop=&amp;quot;http://www.springframework.org/schema/aop&amp;quot;
+xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.2.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.2.xsd &amp;quot;&amp;gt;
+&amp;lt;!-- 配置Controller层扫描包 --&amp;gt;
+&amp;lt;context:component-scan base-package=&amp;quot;com.mhys.crm.controller&amp;quot;&amp;gt;&amp;lt;/context:component-scan&amp;gt;
+&amp;lt;!-- 配置注解驱动 --&amp;gt;
+&amp;lt;mvc:annotation-driven&amp;gt;&amp;lt;/mvc:annotation-driven&amp;gt;
+&amp;lt;!-- 配置视图解析器 --&amp;gt;
+&amp;lt;bean class=&amp;quot;org.springframework.web.servlet.view.InternalResourceViewResolver&amp;quot;&amp;gt;
+	&amp;lt;property name=&amp;quot;prefix&amp;quot; value=&amp;quot;/jsp/&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+	&amp;lt;property name=&amp;quot;suffix&amp;quot; value=&amp;quot;.jsp&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+&amp;lt;/bean&amp;gt;
+&amp;lt;/beans&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此SSM框架环境就搭建完成，可以写具体的业务逻辑了。&lt;br&gt;
+注：我写的包名和文件名在web.xml中都有配置，如需更改包名请连同web.xml配置一同修改！&lt;/p&gt;
+">SSM框架的环境搭建</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/bo-zhu-zi-shu/"" data-c="
