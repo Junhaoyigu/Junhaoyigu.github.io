@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/Junhaoyigu/Junhaoyigu.github.io</id>
     <title>君豪的个人博客</title>
-    <updated>2020-06-04T00:19:33.789Z</updated>
+    <updated>2020-06-04T00:28:55.991Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/Junhaoyigu/Junhaoyigu.github.io"/>
     <link rel="self" href="https://github.com/Junhaoyigu/Junhaoyigu.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://github.com/Junhaoyigu/Junhaoyigu.github.io/images/avatar.png</logo>
     <icon>https://github.com/Junhaoyigu/Junhaoyigu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 君豪的个人博客</rights>
+    <entry>
+        <title type="html"><![CDATA[博主自述]]></title>
+        <id>https://github.com/Junhaoyigu/Junhaoyigu.github.io/post/bo-zhu-zi-shu/</id>
+        <link href="https://github.com/Junhaoyigu/Junhaoyigu.github.io/post/bo-zhu-zi-shu/">
+        </link>
+        <updated>2020-06-04T00:21:45.000Z</updated>
+        <summary type="html"><![CDATA[<p>😊欢迎光临君豪的个人博客</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>😊欢迎光临君豪的个人博客</p>
+<!-- more -->
+<p>博主本人是个java程序员，创建博客的目的就是交流技术吧，共同学习，共同进步。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://github.com/Junhaoyigu/Junhaoyigu.github.io/post/hello-gridea/</id>
