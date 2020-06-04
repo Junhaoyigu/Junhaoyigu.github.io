@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>君豪的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1591258321642">
+<link rel="shortcut icon" href="/favicon.ico?v=1591270081946">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -365,7 +365,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1742<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1792<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -373,11 +373,7 @@
       <div class="post-body">
         
         
-          <p>SSM（Spring+SpringMVC+MyBatis）框架集由Spring、SpringMVC、MyBatis三个开源框架整合而成，常作为数据源较简单的web项目的框架。<br>
-其中spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。<br>
-SpringMVC分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。<br>
-MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持久层框架。<br>
-页面发送请求给控制器，控制器调用业务层处理逻辑，逻辑层向持久层发送请求，持久层与数据库交互，后将结果返回给业务层，业务层将处理逻辑发送给控制器，控制器再调用视图展现数据。</p>
+          <p>🏳️如何用动态项目搭建ssm的环境</p>
 
         
         
@@ -713,19 +709,23 @@ MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持�
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/ssm-kuang-jia-de-huan-jing-da-jian/"" data-c="
-          &lt;p&gt;SSM（Spring+SpringMVC+MyBatis）框架集由Spring、SpringMVC、MyBatis三个开源框架整合而成，常作为数据源较简单的web项目的框架。&lt;br&gt;
-其中spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。&lt;br&gt;
-SpringMVC分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。&lt;br&gt;
-MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持久层框架。&lt;br&gt;
-页面发送请求给控制器，控制器调用业务层处理逻辑，逻辑层向持久层发送请求，持久层与数据库交互，后将结果返回给业务层，业务层将处理逻辑发送给控制器，控制器再调用视图展现数据。&lt;/p&gt;
+          &lt;p&gt;🏳️如何用动态项目搭建ssm的环境&lt;/p&gt;
 &lt;!-- more --&gt;
-&lt;p&gt;我们先学习下SSM框架的环境搭建。&lt;br&gt;
-首先我们先创建一个动态项目，名字随意，我这里就起名“SSMDemo”。服务器我选择的是Tomcat8.5+jdk1.8.module version的版本我选择的是3.1，这套组合比较稳定。&lt;br&gt;
+&lt;h2 id=&#34;一-ssm框架简介&#34;&gt;一、SSM框架简介&lt;/h2&gt;
+&lt;p&gt;    SSM（Spring+SpringMVC+MyBatis）框架集由Spring、SpringMVC、MyBatis三个开源框架整合而成，常作为数据源较简单的web项目的框架。&lt;br&gt;
+    其中spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。&lt;br&gt;
+    SpringMVC分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。&lt;br&gt;
+    MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持久层框架。&lt;br&gt;
+    页面发送请求给控制器，控制器调用业务层处理逻辑，逻辑层向持久层发送请求，持久层与数据库交互，后将结果返回给业务层，业务层将处理逻辑发送给控制器，控制器再调用视图展现数据。&lt;/p&gt;
+&lt;h2 id=&#34;二-ssm框架的环境搭建&#34;&gt;二、SSM框架的环境搭建。&lt;/h2&gt;
+&lt;h3 id=&#34;1创建动态项目&#34;&gt;1.创建动态项目&lt;/h3&gt;
+&lt;p&gt;    我们先创建一个动态项目，名字随意，我这里就起名“SSMDemo”。服务器我选择的是Tomcat8.5+jdk1.8.module version的版本我选择的是3.1，这套组合比较稳定。&lt;br&gt;
 &lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591253916048.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 然后一直next，之后有个创建web.xml的地方，打钩。&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591254421833.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 然后项目就创建完成了。如果忘记了最后那个打钩生成web.xml，可以选择手动生成，这个东西后面会用到。&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591254599023.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-然后我们就要开始配置SSM框架了，首先我们把jar包导进来。素材我会发到我的公众号“君豪说代码”中&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591254771567.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-然后配置web.xml。代码如下：&lt;/p&gt;
+然后我们就要开始配置SSM框架了，首先我们把jar包导进来。素材我会发到我的公众号“君豪说代码”中，回复“SSMjar包”领取&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591254771567.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2配置webxml&#34;&gt;2.配置web.xml&lt;/h3&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
 &lt;!-- 配置spring容器 --&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;context-param&amp;gt;
 	&amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
@@ -768,8 +768,10 @@ MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持�
 	&amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt;
 &amp;lt;/filter-mapping&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后在src下创建两个folder，一个是mybatis,一个是spring。&lt;br&gt;
-在mybatis包下创建SqlMapConfig.xml。代码如下：&lt;/p&gt;
+&lt;h3 id=&#34;3创建两个包&#34;&gt;3.创建两个包&lt;/h3&gt;
+&lt;p&gt;然后在src下创建两个folder，一个是mybatis,一个是spring。&lt;/p&gt;
+&lt;h3 id=&#34;4创建sqlmapconfigxml&#34;&gt;4.创建SqlMapConfig.xml&lt;/h3&gt;
+&lt;p&gt;在mybatis包下创建SqlMapConfig.xml。代码如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!DOCTYPE configuration PUBLIC &amp;quot;-//mybatis.org//DTD Config 3.0//EN&amp;quot; &amp;quot;http://mybatis.org/dtd/mybatis-3-config.dtd&amp;quot; &amp;gt;
 &amp;lt;configuration&amp;gt;
@@ -779,12 +781,14 @@ MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持�
 &amp;lt;/typeAliases&amp;gt;
 &amp;lt;/configuration&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;5创建jdbcproperties&#34;&gt;5.创建jdbc.properties&lt;/h3&gt;
 &lt;p&gt;在spring包下配置jdbc.properties数据库连接的配置，这里需要你改成你自己的数据库和密码&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;jdbc.driver=com.mysql.jdbc.Driver
 jdbc.url=jdbc:mysql://localhost:3306/crm?characterEncoding=utf-8
 jdbc.username=root
 jdbc.password=123456
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;6创建applicationcontext-daoxml&#34;&gt;6.创建applicationContext-dao.xml&lt;/h3&gt;
 &lt;p&gt;在spring包下配置applicationContext-dao.xml&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
@@ -823,7 +827,8 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd &amp;quot;&amp;gt;
 &amp;lt;/bean&amp;gt;
 &amp;lt;/beans&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在spring包下配置applicationContext-dao.xml&lt;/p&gt;
+&lt;h3 id=&#34;7创建applicationcontext-servicexml&#34;&gt;7.创建applicationContext-service.xml&lt;/h3&gt;
+&lt;p&gt;在spring包下配置applicationContext-service.xml&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
 xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot;
@@ -838,9 +843,7 @@ http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx-4.2.xsd 
 http://www.springframework.org/schema/aop 
 http://www.springframework.org/schema/aop/spring-aop-4.2.xsd &amp;quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在spring包下配置applicationContext-service.xml&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!-- 配置service层扫描 --&amp;gt;
+&amp;lt;!-- 配置service层扫描 --&amp;gt;
 &amp;lt;context:component-scan base-package=&amp;quot;com.mhys.crm.service&amp;quot;&amp;gt;&amp;lt;/context:component-scan&amp;gt;
 &amp;lt;!-- 配置事务管理器 --&amp;gt;
 &amp;lt;bean id=&amp;quot;transactionManager&amp;quot; class=&amp;quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&amp;quot;&amp;gt;
@@ -850,6 +853,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.2.xsd &amp;quot;&amp;gt;
 &amp;lt;tx:annotation-driven transaction-manager=&amp;quot;transactionManager&amp;quot;/&amp;gt;
 &amp;lt;/beans&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;8创建spring-mvcxml&#34;&gt;8.创建spring-mvc.xml&lt;/h3&gt;
 &lt;p&gt;在spring包下配置spring-mvc.xml&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
@@ -880,7 +884,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.2.xsd &amp;quot;&amp;gt;
 &amp;lt;/beans&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;至此SSM框架环境就搭建完成，可以写具体的业务逻辑了。&lt;br&gt;
-注：我写的包名和文件名在web.xml中都有配置，如需更改包名请连同web.xml配置一同修改！&lt;/p&gt;
+&lt;code&gt;注：我写的包名和文件名在web.xml中都有配置，如需更改包名请连同web.xml配置一同修改！&lt;/code&gt;&lt;/p&gt;
 ">SSM框架的环境搭建</a>
       </div>
       
