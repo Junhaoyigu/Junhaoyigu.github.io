@@ -2,13 +2,70 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://junhaoyigu.github.io</id>
     <title>君豪的博客</title>
-    <updated>2020-06-07T11:53:36.975Z</updated>
+    <updated>2020-06-12T01:22:25.822Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://junhaoyigu.github.io"/>
     <link rel="self" href="https://junhaoyigu.github.io/atom.xml"/>
     <logo>https://junhaoyigu.github.io/images/avatar.png</logo>
     <icon>https://junhaoyigu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 君豪的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[mybatis 逆向工程的学习]]></title>
+        <id>https://junhaoyigu.github.io/post/mybatis-ni-xiang-gong-cheng-de-xue-xi/</id>
+        <link href="https://junhaoyigu.github.io/post/mybatis-ni-xiang-gong-cheng-de-xue-xi/">
+        </link>
+        <updated>2020-06-12T00:44:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>😋如何自动生成实体类和dao层基础代码</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>😋如何自动生成实体类和dao层基础代码</p>
+<!-- more -->
+<h2 id="一-mybatis-generator简介">一、mybatis generator简介</h2>
+<p>        mybatis逆向工程也就是mybatis generator代码生成器，用这个工具通过配置数据库生成实体类和dao/mapper的接口和xml文件。</p>
+<h2 id="二-环境搭建">二、环境搭建</h2>
+<h3 id="1配置generator的两种方式">1.配置generator的两种方式</h3>
+<p>        mybatis generator使用有两种方式，一种通过导入jar包的方式配置好generatorConfig.xml后去写逆向工程的java测试代码去调用generator，另一种是安装generator的插件。因为第二种相对简单适合初学者，我来介绍一下第二种。</p>
+<h3 id="2安装generator插件">2.安装generator插件</h3>
+<p>打开eclipse应用商店<br>
+<img src="https://junhaoyigu.github.io/post-images/1591923819457.png" alt="" loading="lazy"><br>
+搜索mybatis generator找到小黑鸟插件点击install，因为我是安装过所以显示的按钮是installed<br>
+<img src="https://junhaoyigu.github.io/post-images/1591924017916.png" alt="" loading="lazy"><br>
+安装过程很简单，我就不赘述了。</p>
+<h2 id="三-配置generatorconfigxml">三、配置generatorConfig.xml</h2>
+<p>安装完成后，创建一个项目，在src目录下new一个generatorConfig.xml<br>
+<img src="https://junhaoyigu.github.io/post-images/1591924291009.png" alt="" loading="lazy"><br>
+名字不用输入会自动生成，路径基本也不用输入，完成后点击finish<br>
+<img src="https://junhaoyigu.github.io/post-images/1591924385800.png" alt="" loading="lazy"><br>
+这里我省略了配置jar包或依赖的过程，因为要根据数据库生成实体类，所以 数据库连接jar包/依赖 必不可少。下面是文件内的配置</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE generatorConfiguration PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+&lt;generatorConfiguration&gt;
+&lt;!-- 名字 生成类型MyBatis3Simple 实体类生成类型--&gt;
+&lt;context id=&quot;context1&quot; targetRuntime=&quot;MyBatis3Simple&quot; defaultModelType=&quot;flat&quot;&gt;
+&lt;!-- 注释 --&gt;
+&lt;commentGenerator&gt;
+	&lt;!-- 阻止所有的注释 --&gt;
+	&lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;
+&lt;/commentGenerator&gt;
+&lt;!--数据库配置 数据库地址、驱动、密码、用户 --&gt;
+&lt;jdbcConnection connectionURL=&quot;jdbc:mysql://localhost:3306/drink&quot; driverClass=&quot;com.mysql.jdbc.Driver&quot; password=&quot;123456&quot; userId=&quot;root&quot; /&gt;
+&lt;!-- java实体类配置 包名、路径斜杠反写 --&gt;
+&lt;javaModelGenerator targetPackage=&quot;com.mhys.tea.pojo&quot; targetProject=&quot;Tea\src&quot; /&gt;
+&lt;!-- 映射xml文件配置 包名、路径斜杠反写 --&gt;
+&lt;sqlMapGenerator targetPackage=&quot;com.mhys.tea.dao&quot; targetProject=&quot;Tea\src&quot; /&gt;
+&lt;!-- 接口配置 包名、路径斜杠反写--&gt;
+&lt;javaClientGenerator targetPackage=&quot;com.mhys.tea.dao&quot; targetProject=&quot;Tea\src&quot; type=&quot;XMLMAPPER&quot; /&gt;
+&lt;!-- 数据表配置 生成哪些表，%代表这个数据库所有表的实体类和dao的生成 --&gt;
+&lt;table tableName=&quot;%&quot;&gt;
+	&lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;MySQL&quot;/&gt;
+&lt;/table&gt;
+&lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+</code></pre>
+<p>配置完后在当前这个文件右键run as就可以生成了<br>
+<img src="https://junhaoyigu.github.io/post-images/1591924807545.png" alt="" loading="lazy"><br>
+<code>注：Tea是我的项目名，自己用到时一定要修改成自己的项目名，其他的路径也要改成自己想要的路径！</code></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SSM框架的环境搭建]]></title>
         <id>https://junhaoyigu.github.io/post/ssm-kuang-jia-de-huan-jing-da-jian/</id>

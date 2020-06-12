@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>君豪的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1591530804687">
+<link rel="shortcut icon" href="/favicon.ico?v=1591924941225">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -193,7 +193,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -267,6 +267,53 @@
         <div class="section-box gemini">
           <section class="section  posts-expand slide-down-in">
             
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://junhaoyigu.github.io/post/mybatis-ni-xiang-gong-cheng-de-xue-xi/">
+      mybatis 逆向工程的学习
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span>2020-06-12</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>3<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>667<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+        
+          <p>😋如何自动生成实体类和dao层基础代码</p>
+
+        
+        
+        <div class="post-button text-center">
+          <a class="btn language" data-lan="read-more" href="https://junhaoyigu.github.io/post/mybatis-ni-xiang-gong-cheng-de-xue-xi/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
   <article class="post-list-box  post box-shadow-wrapper">
     <div class="article-wrapper bg-color">
       <header class="post-header">
@@ -645,6 +692,58 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/mybatis-ni-xiang-gong-cheng-de-xue-xi/"" data-c="
+          &lt;p&gt;😋如何自动生成实体类和dao层基础代码&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;一-mybatis-generator简介&#34;&gt;一、mybatis generator简介&lt;/h2&gt;
+&lt;p&gt;        mybatis逆向工程也就是mybatis generator代码生成器，用这个工具通过配置数据库生成实体类和dao/mapper的接口和xml文件。&lt;/p&gt;
+&lt;h2 id=&#34;二-环境搭建&#34;&gt;二、环境搭建&lt;/h2&gt;
+&lt;h3 id=&#34;1配置generator的两种方式&#34;&gt;1.配置generator的两种方式&lt;/h3&gt;
+&lt;p&gt;        mybatis generator使用有两种方式，一种通过导入jar包的方式配置好generatorConfig.xml后去写逆向工程的java测试代码去调用generator，另一种是安装generator的插件。因为第二种相对简单适合初学者，我来介绍一下第二种。&lt;/p&gt;
+&lt;h3 id=&#34;2安装generator插件&#34;&gt;2.安装generator插件&lt;/h3&gt;
+&lt;p&gt;打开eclipse应用商店&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591923819457.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+搜索mybatis generator找到小黑鸟插件点击install，因为我是安装过所以显示的按钮是installed&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591924017916.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+安装过程很简单，我就不赘述了。&lt;/p&gt;
+&lt;h2 id=&#34;三-配置generatorconfigxml&#34;&gt;三、配置generatorConfig.xml&lt;/h2&gt;
+&lt;p&gt;安装完成后，创建一个项目，在src目录下new一个generatorConfig.xml&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591924291009.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+名字不用输入会自动生成，路径基本也不用输入，完成后点击finish&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591924385800.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这里我省略了配置jar包或依赖的过程，因为要根据数据库生成实体类，所以 数据库连接jar包/依赖 必不可少。下面是文件内的配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE generatorConfiguration PUBLIC &amp;quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&amp;quot; &amp;quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&amp;quot;&amp;gt;
+&amp;lt;generatorConfiguration&amp;gt;
+&amp;lt;!-- 名字 生成类型MyBatis3Simple 实体类生成类型--&amp;gt;
+&amp;lt;context id=&amp;quot;context1&amp;quot; targetRuntime=&amp;quot;MyBatis3Simple&amp;quot; defaultModelType=&amp;quot;flat&amp;quot;&amp;gt;
+&amp;lt;!-- 注释 --&amp;gt;
+&amp;lt;commentGenerator&amp;gt;
+	&amp;lt;!-- 阻止所有的注释 --&amp;gt;
+	&amp;lt;property name=&amp;quot;suppressAllComments&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt;
+&amp;lt;/commentGenerator&amp;gt;
+&amp;lt;!--数据库配置 数据库地址、驱动、密码、用户 --&amp;gt;
+&amp;lt;jdbcConnection connectionURL=&amp;quot;jdbc:mysql://localhost:3306/drink&amp;quot; driverClass=&amp;quot;com.mysql.jdbc.Driver&amp;quot; password=&amp;quot;123456&amp;quot; userId=&amp;quot;root&amp;quot; /&amp;gt;
+&amp;lt;!-- java实体类配置 包名、路径斜杠反写 --&amp;gt;
+&amp;lt;javaModelGenerator targetPackage=&amp;quot;com.mhys.tea.pojo&amp;quot; targetProject=&amp;quot;Tea\src&amp;quot; /&amp;gt;
+&amp;lt;!-- 映射xml文件配置 包名、路径斜杠反写 --&amp;gt;
+&amp;lt;sqlMapGenerator targetPackage=&amp;quot;com.mhys.tea.dao&amp;quot; targetProject=&amp;quot;Tea\src&amp;quot; /&amp;gt;
+&amp;lt;!-- 接口配置 包名、路径斜杠反写--&amp;gt;
+&amp;lt;javaClientGenerator targetPackage=&amp;quot;com.mhys.tea.dao&amp;quot; targetProject=&amp;quot;Tea\src&amp;quot; type=&amp;quot;XMLMAPPER&amp;quot; /&amp;gt;
+&amp;lt;!-- 数据表配置 生成哪些表，%代表这个数据库所有表的实体类和dao的生成 --&amp;gt;
+&amp;lt;table tableName=&amp;quot;%&amp;quot;&amp;gt;
+	&amp;lt;generatedKey column=&amp;quot;id&amp;quot; sqlStatement=&amp;quot;MySQL&amp;quot;/&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;/context&amp;gt;
+&amp;lt;/generatorConfiguration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置完后在当前这个文件右键run as就可以生成了&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1591924807545.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;code&gt;注：Tea是我的项目名，自己用到时一定要修改成自己的项目名，其他的路径也要改成自己想要的路径！&lt;/code&gt;&lt;/p&gt;
+">mybatis 逆向工程的学习</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/ssm-kuang-jia-de-huan-jing-da-jian/"" data-c="
