@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://junhaoyigu.github.io</id>
     <title>君豪的博客</title>
-    <updated>2020-06-12T01:22:25.822Z</updated>
+    <updated>2020-06-12T02:25:00.882Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://junhaoyigu.github.io"/>
     <link rel="self" href="https://junhaoyigu.github.io/atom.xml"/>
@@ -20,10 +20,10 @@
         <content type="html"><![CDATA[<p>😋如何自动生成实体类和dao层基础代码</p>
 <!-- more -->
 <h2 id="一-mybatis-generator简介">一、mybatis generator简介</h2>
-<p>        mybatis逆向工程也就是mybatis generator代码生成器，用这个工具通过配置数据库生成实体类和dao/mapper的接口和xml文件。</p>
+<p>    mybatis逆向工程也就是mybatis generator代码生成器，用这个工具通过配置数据库生成实体类和dao/mapper的接口和xml文件。</p>
 <h2 id="二-环境搭建">二、环境搭建</h2>
 <h3 id="1配置generator的两种方式">1.配置generator的两种方式</h3>
-<p>        mybatis generator使用有两种方式，一种通过导入jar包的方式配置好generatorConfig.xml后去写逆向工程的java测试代码去调用generator，另一种是安装generator的插件。因为第二种相对简单适合初学者，我来介绍一下第二种。</p>
+<p>    mybatis generator使用有两种方式，一种通过导入jar包的方式配置好generatorConfig.xml后去写逆向工程的java测试代码去调用generator，另一种是安装generator的插件。因为第二种相对简单适合初学者，我来介绍一下第二种。</p>
 <h3 id="2安装generator插件">2.安装generator插件</h3>
 <p>打开eclipse应用商店<br>
 <img src="https://junhaoyigu.github.io/post-images/1591923819457.png" alt="" loading="lazy"><br>
