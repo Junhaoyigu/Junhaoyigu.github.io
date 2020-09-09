@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>君豪的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1591932179372">
+<link rel="shortcut icon" href="/favicon.ico?v=1599619856861">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -193,7 +193,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">3</span>
+        <span class="site-item-stat-count">4</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -267,6 +267,53 @@
         <div class="section-box gemini">
           <section class="section  posts-expand slide-down-in">
             
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://junhaoyigu.github.io/post/windows-xi-tong-da-jian-node-huan-jing/">
+      Windows系统搭建node环境
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span>2020-09-09</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>853<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+        
+          <p>虽然是后端程序员，但是有的时候也要接触前端的东西，这是我整理的windows系统如何快速搭建node环境的文章😉</p>
+
+        
+        
+        <div class="post-button text-center">
+          <a class="btn language" data-lan="read-more" href="https://junhaoyigu.github.io/post/windows-xi-tong-da-jian-node-huan-jing/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
   <article class="post-list-box  post box-shadow-wrapper">
     <div class="article-wrapper bg-color">
       <header class="post-header">
@@ -705,6 +752,66 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/windows-xi-tong-da-jian-node-huan-jing/"" data-c="
+          &lt;p&gt;虽然是后端程序员，但是有的时候也要接触前端的东西，这是我整理的windows系统如何快速搭建node环境的文章😉&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;一-node是什么&#34;&gt;一、node是什么？&lt;/h2&gt;
+&lt;p&gt;    Node全称NodeJS，是一个基于 Chrome V8 引擎的 JavaScript 运行环境；一个让JavaScript 运行在服务端的开发平台，它让JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言。&lt;/p&gt;
+&lt;h2 id=&#34;二-下载nodejs&#34;&gt;二、下载nodejs&lt;/h2&gt;
+&lt;p&gt;    去官网下载最新版本的安装包 .msi    &lt;strong&gt;&lt;a href=&#34;http://nodejs.cn/download/&#34;&gt;nodejs下载&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1安装说明&#34;&gt;1.安装说明&lt;/h3&gt;
+&lt;p&gt;建议不要安装到c盘，一直点next下一步就ok啦，什么也不用管。&lt;/p&gt;
+&lt;h3 id=&#34;2测试是否安装成功&#34;&gt;2.测试是否安装成功&lt;/h3&gt;
+&lt;p&gt;    在键盘按下【win+R】键，输入cmd打开命令指示符界面, 然后输入 &lt;strong&gt;node -v&lt;/strong&gt; 和 &lt;strong&gt;npm -v&lt;/strong&gt; 来查看node版本和npm的版本，npm是node的包管理工具，用他来下载东西很方便&lt;/p&gt;
+&lt;h2 id=&#34;三-配置nodejs&#34;&gt;三、配置nodejs&lt;/h2&gt;
+&lt;h3 id=&#34;1配置全局安装路径和日志路径&#34;&gt;1.配置全局安装路径和日志路径&lt;/h3&gt;
+&lt;p&gt;（1）打开你的安装路径，新建两个文件夹，&lt;strong&gt;node_global&lt;/strong&gt; 和 &lt;strong&gt;node_cache&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（2）再次打开命令指示符窗口cmd 输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm config set prefix &amp;quot;D:\Program FIles\nodejs\node_global&amp;quot;
+npm config set prefix &amp;quot;D:\Program FIles\nodejs\node_global&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（3） 检查是否生效&lt;br&gt;
+    在键盘按下【win+R】键，输入cmd打开命令指示符界面，然后回车，打开cmd窗口，输入npm config list&lt;br&gt;
+    你应该可以看到 输出的结果中有prefix = &amp;quot;D:\Program FIles\nodejs\node_global&amp;quot; 和cache = &amp;quot;D:\Program FIles\nodejs\node_cache&amp;quot;&lt;/p&gt;
+&lt;h3 id=&#34;2环境变量的配置&#34;&gt;2.环境变量的配置&lt;/h3&gt;
+&lt;p&gt;（1）设置环境变量&lt;br&gt;
+    关闭cmd窗口，“我的电脑”-右键-“属性”-“高级系统设置”-“高级”-“环境变量”，进入环境变量对话框，在【系统变量】下新建【NODE_PATH】，输入【D:\Program Files\nodejs\node_global\node_modules】，将【用户变量】下的【C:\Users**\AppData\Roaming\npm】修改为【D:\Program Files\nodejs\node_global】&lt;br&gt;
+（2）测试&lt;br&gt;
+    配置完后，安装个module测试下，我们就安装最常用的express模块，打开cmd窗口，输入如下命令进行模块的全局安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install express -g # -g是全局安装的意思, 依赖包将会安装到nodejs/node_global下
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3淘宝镜像的配置&#34;&gt;3.淘宝镜像的配置&lt;/h3&gt;
+&lt;p&gt;    npm安装插件过程：从&lt;a href=&#34;http://registry.npmjs.org&#34;&gt;http://registry.npmjs.org&lt;/a&gt;下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常）&lt;br&gt;
+阿里在国内搭建了镜像服务器:&lt;a href=&#34;http://npm.taobao.org&#34;&gt;http://npm.taobao.org &lt;/a&gt;&lt;br&gt;
+需要执行以下命令更改:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm config set registry https://registry.npm.taobao.org --global
+npm config set disturl https://npm.taobao.org/dist --global
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更改完成&lt;br&gt;
+使用以下命令查看本地镜像源&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm config get registry
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cnpm等同于npm命令，用法一样，cnpm下载模块会快一点。&lt;/p&gt;
+&lt;h2 id=&#34;四-npm基本语法&#34;&gt;四、npm基本语法&lt;/h2&gt;
+&lt;p&gt;npm -version  查看npm版本&lt;/p&gt;
+&lt;p&gt;npm install &lt;name&gt;  安装node.js的依赖包&lt;/p&gt;
+&lt;p&gt;npm install &lt;name&gt; @3.0.6 安装版本为3.0.6的依赖包&lt;/p&gt;
+&lt;p&gt;npm install &lt;name&gt; --save  安装的同时将信息写入package.json 中&lt;/p&gt;
+&lt;p&gt;npm install &lt;name&gt; -g  全局安装&lt;/p&gt;
+&lt;p&gt;npm init  会引导你创建一个package.json文件，包括名称，版本，作者等这些信息&lt;/p&gt;
+&lt;p&gt;npm remove express 移除express&lt;/p&gt;
+&lt;p&gt;npm update express 更新express&lt;/p&gt;
+&lt;p&gt;npm ls  列出当前安装的所有包&lt;/p&gt;
+&lt;p&gt;npm root  查看当前包的安装路径&lt;/p&gt;
+&lt;p&gt;npm root -g 查看全局包的安装路径&lt;/p&gt;
+&lt;p&gt;npm help  帮助&lt;/p&gt;
+&lt;p&gt;npm view express  dependencies  查看express 包的依赖关系&lt;/p&gt;
+&lt;p&gt;npm view express respository.url  查看express包的源文件地址&lt;/p&gt;
+&lt;p&gt;好了，这就是我整理的搭建Windows系统node环境，欢迎观看&lt;/p&gt;
+">Windows系统搭建node环境</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/mybatis-ni-xiang-gong-cheng-de-xue-xi/"" data-c="

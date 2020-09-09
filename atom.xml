@@ -2,13 +2,78 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://junhaoyigu.github.io</id>
     <title>君豪的博客</title>
-    <updated>2020-06-12T03:23:04.095Z</updated>
+    <updated>2020-09-09T02:51:09.728Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://junhaoyigu.github.io"/>
     <link rel="self" href="https://junhaoyigu.github.io/atom.xml"/>
     <logo>https://junhaoyigu.github.io/images/avatar.png</logo>
     <icon>https://junhaoyigu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 君豪的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows系统搭建node环境]]></title>
+        <id>https://junhaoyigu.github.io/post/windows-xi-tong-da-jian-node-huan-jing/</id>
+        <link href="https://junhaoyigu.github.io/post/windows-xi-tong-da-jian-node-huan-jing/">
+        </link>
+        <updated>2020-09-09T01:56:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>虽然是后端程序员，但是有的时候也要接触前端的东西，这是我整理的windows系统如何快速搭建node环境的文章😉</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>虽然是后端程序员，但是有的时候也要接触前端的东西，这是我整理的windows系统如何快速搭建node环境的文章😉</p>
+<!-- more -->
+<h2 id="一-node是什么">一、node是什么？</h2>
+<p>    Node全称NodeJS，是一个基于 Chrome V8 引擎的 JavaScript 运行环境；一个让JavaScript 运行在服务端的开发平台，它让JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言。</p>
+<h2 id="二-下载nodejs">二、下载nodejs</h2>
+<p>    去官网下载最新版本的安装包 .msi    <strong><a href="http://nodejs.cn/download/">nodejs下载</a></strong></p>
+<h3 id="1安装说明">1.安装说明</h3>
+<p>建议不要安装到c盘，一直点next下一步就ok啦，什么也不用管。</p>
+<h3 id="2测试是否安装成功">2.测试是否安装成功</h3>
+<p>    在键盘按下【win+R】键，输入cmd打开命令指示符界面, 然后输入 <strong>node -v</strong> 和 <strong>npm -v</strong> 来查看node版本和npm的版本，npm是node的包管理工具，用他来下载东西很方便</p>
+<h2 id="三-配置nodejs">三、配置nodejs</h2>
+<h3 id="1配置全局安装路径和日志路径">1.配置全局安装路径和日志路径</h3>
+<p>（1）打开你的安装路径，新建两个文件夹，<strong>node_global</strong> 和 <strong>node_cache</strong></p>
+<p>（2）再次打开命令指示符窗口cmd 输入</p>
+<pre><code>npm config set prefix &quot;D:\Program FIles\nodejs\node_global&quot;
+npm config set prefix &quot;D:\Program FIles\nodejs\node_global&quot;
+</code></pre>
+<p>（3） 检查是否生效<br>
+    在键盘按下【win+R】键，输入cmd打开命令指示符界面，然后回车，打开cmd窗口，输入npm config list<br>
+    你应该可以看到 输出的结果中有prefix = &quot;D:\Program FIles\nodejs\node_global&quot; 和cache = &quot;D:\Program FIles\nodejs\node_cache&quot;</p>
+<h3 id="2环境变量的配置">2.环境变量的配置</h3>
+<p>（1）设置环境变量<br>
+    关闭cmd窗口，“我的电脑”-右键-“属性”-“高级系统设置”-“高级”-“环境变量”，进入环境变量对话框，在【系统变量】下新建【NODE_PATH】，输入【D:\Program Files\nodejs\node_global\node_modules】，将【用户变量】下的【C:\Users**\AppData\Roaming\npm】修改为【D:\Program Files\nodejs\node_global】<br>
+（2）测试<br>
+    配置完后，安装个module测试下，我们就安装最常用的express模块，打开cmd窗口，输入如下命令进行模块的全局安装：</p>
+<pre><code>npm install express -g # -g是全局安装的意思, 依赖包将会安装到nodejs/node_global下
+</code></pre>
+<h3 id="3淘宝镜像的配置">3.淘宝镜像的配置</h3>
+<p>    npm安装插件过程：从<a href="http://registry.npmjs.org">http://registry.npmjs.org</a>下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常）<br>
+阿里在国内搭建了镜像服务器:<a href="http://npm.taobao.org">http://npm.taobao.org </a><br>
+需要执行以下命令更改:</p>
+<pre><code>npm config set registry https://registry.npm.taobao.org --global
+npm config set disturl https://npm.taobao.org/dist --global
+</code></pre>
+<p>更改完成<br>
+使用以下命令查看本地镜像源</p>
+<pre><code>npm config get registry
+</code></pre>
+<p>cnpm等同于npm命令，用法一样，cnpm下载模块会快一点。</p>
+<h2 id="四-npm基本语法">四、npm基本语法</h2>
+<p>npm -version  查看npm版本</p>
+<p>npm install <name>  安装node.js的依赖包</p>
+<p>npm install <name> @3.0.6 安装版本为3.0.6的依赖包</p>
+<p>npm install <name> --save  安装的同时将信息写入package.json 中</p>
+<p>npm install <name> -g  全局安装</p>
+<p>npm init  会引导你创建一个package.json文件，包括名称，版本，作者等这些信息</p>
+<p>npm remove express 移除express</p>
+<p>npm update express 更新express</p>
+<p>npm ls  列出当前安装的所有包</p>
+<p>npm root  查看当前包的安装路径</p>
+<p>npm root -g 查看全局包的安装路径</p>
+<p>npm help  帮助</p>
+<p>npm view express  dependencies  查看express 包的依赖关系</p>
+<p>npm view express respository.url  查看express包的源文件地址</p>
+<p>好了，这就是我整理的搭建Windows系统node环境，欢迎观看</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[mybatis 逆向工程的学习]]></title>
         <id>https://junhaoyigu.github.io/post/mybatis-ni-xiang-gong-cheng-de-xue-xi/</id>
