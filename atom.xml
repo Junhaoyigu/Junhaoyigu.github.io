@@ -2,13 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://junhaoyigu.github.io</id>
     <title>君豪的博客</title>
-    <updated>2020-09-23T01:33:06.753Z</updated>
+    <updated>2020-10-29T06:30:33.367Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://junhaoyigu.github.io"/>
     <link rel="self" href="https://junhaoyigu.github.io/atom.xml"/>
     <logo>https://junhaoyigu.github.io/images/avatar.png</logo>
     <icon>https://junhaoyigu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 君豪的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[MySQL连接不上错误: "Host 'XXX.XXX.XXX.XXX' is not allowed to connect to this MySQL/Mariadb server]]></title>
+        <id>https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/</id>
+        <link href="https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/">
+        </link>
+        <updated>2020-09-22T08:24:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>工作中遇到的数据库连接问题😤</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>工作中遇到的数据库连接问题😤</p>
+<!-- more -->
+<p>##解决方案：<br>
+###1.命令行登录数据库<br>
+mysql -u 用户名 -p 用户密码<br>
+###2.使用自带的mysql数据库<br>
+use mysql;<br>
+###3.查询是不是root账户只能本地连接<br>
+select host,user from user where user='root';<br>
+如果root对应的host没有对应的ip，就修改指定ip或者%<br>
+###4.修改权限<br>
+update user set host = '%'  where user ='root';<br>
+<code>如果遇到“ERROR 1062 (23000): Duplicate entry '%-root' for key 'PRIMARY'”错误，不用管它，继续第5步就可以远程访问数据库了</code><br>
+###5.刷新数据库<br>
+flush privileges;</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Windows系统搭建node环境]]></title>
         <id>https://junhaoyigu.github.io/post/windows-node/</id>

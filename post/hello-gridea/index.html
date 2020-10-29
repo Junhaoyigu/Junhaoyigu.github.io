@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>Hello Gridea | 君豪的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1600824778533">
+<link rel="shortcut icon" href="/favicon.ico?v=1603953028213">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -211,7 +211,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-count">5</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1156,6 +1156,26 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/"" data-c="
+          &lt;p&gt;工作中遇到的数据库连接问题😤&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;##解决方案：&lt;br&gt;
+###1.命令行登录数据库&lt;br&gt;
+mysql -u 用户名 -p 用户密码&lt;br&gt;
+###2.使用自带的mysql数据库&lt;br&gt;
+use mysql;&lt;br&gt;
+###3.查询是不是root账户只能本地连接&lt;br&gt;
+select host,user from user where user=&#39;root&#39;;&lt;br&gt;
+如果root对应的host没有对应的ip，就修改指定ip或者%&lt;br&gt;
+###4.修改权限&lt;br&gt;
+update user set host = &#39;%&#39;  where user =&#39;root&#39;;&lt;br&gt;
+&lt;code&gt;如果遇到“ERROR 1062 (23000): Duplicate entry &#39;%-root&#39; for key &#39;PRIMARY&#39;”错误，不用管它，继续第5步就可以远程访问数据库了&lt;/code&gt;&lt;br&gt;
+###5.刷新数据库&lt;br&gt;
+flush privileges;&lt;/p&gt;
+">MySQL连接不上错误: "Host 'XXX.XXX.XXX.XXX' is not allowed to connect to this MySQL/Mariadb server</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/windows-node/"" data-c="

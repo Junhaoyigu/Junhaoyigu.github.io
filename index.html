@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>君豪的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1600824778533">
+<link rel="shortcut icon" href="/favicon.ico?v=1603953028213">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -193,7 +193,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-count">5</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -267,6 +267,53 @@
         <div class="section-box gemini">
           <section class="section  posts-expand slide-down-in">
             
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/">
+      MySQL连接不上错误: &#34;Host &#39;XXX.XXX.XXX.XXX&#39; is not allowed to connect to this MySQL/Mariadb server
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span>2020-09-22</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>145<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+        
+          <p>工作中遇到的数据库连接问题😤</p>
+
+        
+        
+        <div class="post-button text-center">
+          <a class="btn language" data-lan="read-more" href="https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
   <article class="post-list-box  post box-shadow-wrapper">
     <div class="article-wrapper bg-color">
       <header class="post-header">
@@ -771,6 +818,26 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/"" data-c="
+          &lt;p&gt;工作中遇到的数据库连接问题😤&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;##解决方案：&lt;br&gt;
+###1.命令行登录数据库&lt;br&gt;
+mysql -u 用户名 -p 用户密码&lt;br&gt;
+###2.使用自带的mysql数据库&lt;br&gt;
+use mysql;&lt;br&gt;
+###3.查询是不是root账户只能本地连接&lt;br&gt;
+select host,user from user where user=&#39;root&#39;;&lt;br&gt;
+如果root对应的host没有对应的ip，就修改指定ip或者%&lt;br&gt;
+###4.修改权限&lt;br&gt;
+update user set host = &#39;%&#39;  where user =&#39;root&#39;;&lt;br&gt;
+&lt;code&gt;如果遇到“ERROR 1062 (23000): Duplicate entry &#39;%-root&#39; for key &#39;PRIMARY&#39;”错误，不用管它，继续第5步就可以远程访问数据库了&lt;/code&gt;&lt;br&gt;
+###5.刷新数据库&lt;br&gt;
+flush privileges;&lt;/p&gt;
+">MySQL连接不上错误: "Host 'XXX.XXX.XXX.XXX' is not allowed to connect to this MySQL/Mariadb server</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/windows-node/"" data-c="
