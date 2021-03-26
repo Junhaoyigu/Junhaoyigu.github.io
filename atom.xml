@@ -2,13 +2,58 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://junhaoyigu.github.io</id>
     <title>君豪的博客</title>
-    <updated>2020-10-29T06:30:33.367Z</updated>
+    <updated>2021-03-26T03:41:09.423Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://junhaoyigu.github.io"/>
     <link rel="self" href="https://junhaoyigu.github.io/atom.xml"/>
     <logo>https://junhaoyigu.github.io/images/avatar.png</logo>
     <icon>https://junhaoyigu.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 君豪的博客</rights>
+    <rights>All rights reserved 2021, 君豪的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows10系统下JDK1.8安装及环境配置]]></title>
+        <id>https://junhaoyigu.github.io/post/windows10-jdk8/</id>
+        <link href="https://junhaoyigu.github.io/post/windows10-jdk8/">
+        </link>
+        <updated>2021-03-26T02:11:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>jdk1.8在windows下安装教程</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>jdk1.8在windows下安装教程</p>
+<!-- more -->
+<h2 id="下载">下载</h2>
+<p>        点击 <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">jdk下载</a></strong>  ，进入JDK1.8下载官网，或者直接百度JDK1.8，也可进入下载官网。<br>
+进入官网后，按照所给信息下载对应系统版本的JDK,点击下载后需要先登录下Oracle才能下载，没有账户的需要注册。这里以安装jdk-8u281-windows-x64.exe为例。<br>
+<img src="https://junhaoyigu.github.io/post-images/1616725147722.png" alt="" loading="lazy"></p>
+<h2 id="安装">安装</h2>
+<p>下载后双击即可安装，如下图：<br>
+<img src="https://junhaoyigu.github.io/post-images/1616725491526.png" alt="" loading="lazy"><br>
+更改jdk安装路径（也可以采用默认安装在C盘），这里我安装的是D:\Program Files\Java\jdk1.8.0_281\目录（后面配置环境变量有用），然后下一步。<br>
+<img src="https://junhaoyigu.github.io/post-images/1616725795369.png" alt="" loading="lazy"><br>
+更改jre安装路径（也可以采用默认安装位置），下一步。<br>
+<img src="https://junhaoyigu.github.io/post-images/1616726173353.png" alt="" loading="lazy"><br>
+<img src="https://junhaoyigu.github.io/post-images/1616726198570.png" alt="" loading="lazy"></p>
+<h2 id="环境配置">环境配置</h2>
+<h3 id="jdk环境变量配置">JDK环境变量配置。</h3>
+<p>        右键单击此电脑图标，接着点击菜单最下方的属性菜单项，或者连续打开控制面板--系统和安全--系统也可以。<br>
+<img src="https://junhaoyigu.github.io/post-images/1616726617329.png" alt="" loading="lazy"><br>
+在弹出的对话框中单击”高级“选项卡，接着点击下方的环境变量：<br>
+<img src="https://junhaoyigu.github.io/post-images/1616726633980.png" alt="" loading="lazy"></p>
+<h3 id="首先配置java_home">首先配置JAVA_HOME。</h3>
+<p>        为了后续可能会加入不同的JDK版本，能够做到简单，我们通过配置JAVA_HOME,来获取bin目录之前的目录结构。<br>
+        在环境变量对话框中的系统变量中点击“新建”按钮，在弹出的新建系统变量里的变量名中输入JAVA_HOME，在变量值中输入JDK的根目录： D:\Program Files\Java\jdk1.8.0_281\ ，然后点击确定，返回环境变量对话框。<br>
+<img src="https://junhaoyigu.github.io/post-images/1616726802759.png" alt="" loading="lazy"></p>
+<h3 id="classpath变量">ClassPath变量</h3>
+<p>        classpath是存放字节码文件的路径，可以是任意的路径，当执行java命令时，系统会在classpath的路径下自动寻找相应的.class字节码文件。</p>
+<p>        Jdk1.5版本以后无需配置classpath</p>
+<h3 id="最后配置path变量">最后配置Path变量</h3>
+<p>        找到Path变量，双击编辑 Path变量。点击新建，变量值为%JAVA_HOME%\bin ，并将它移到最前端，然后点击确定。<br>
+<img src="https://junhaoyigu.github.io/post-images/1616727646033.png" alt="" loading="lazy"></p>
+<h2 id="检验是否配置成功">检验是否配置成功</h2>
+<h3 id="按键盘winr打开运行输入cmd-指令点击确定进入命令行窗口">按键盘win+R，打开运行，输入cmd 指令，点击确定进入命令行窗口。</h3>
+<figure data-type="image" tabindex="1"><img src="https://junhaoyigu.github.io/post-images/1616727796710.png" alt="" loading="lazy"></figure>
+<h3 id="输入java-version获取当前安装的-jdk-的版本信息注意java后面有个空格出现下图所示输出则说明jdk安装成功">输入java -version获取当前安装的 jdk 的版本信息（注意：java后面有个空格），出现下图所示输出，则说明jdk安装成功。</h3>
+<figure data-type="image" tabindex="2"><img src="https://junhaoyigu.github.io/post-images/1616727904941.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[MySQL连接不上错误: "Host 'XXX.XXX.XXX.XXX' is not allowed to connect to this MySQL/Mariadb server]]></title>
         <id>https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/</id>

@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>SSM框架的环境搭建 | 君豪的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1603953028213">
+<link rel="shortcut icon" href="/favicon.ico?v=1616729446697">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -211,19 +211,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-count">6</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-count">8</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-count">8</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1327,6 +1327,46 @@ http://www.springframework.org/schema/aop/spring-aop-4.2.xsd &quot;&gt;
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/windows10-jdk8/"" data-c="
+          &lt;p&gt;jdk1.8在windows下安装教程&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;下载&#34;&gt;下载&lt;/h2&gt;
+&lt;p&gt;        点击 &lt;strong&gt;&lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&#34;&gt;jdk下载&lt;/a&gt;&lt;/strong&gt;  ，进入JDK1.8下载官网，或者直接百度JDK1.8，也可进入下载官网。&lt;br&gt;
+进入官网后，按照所给信息下载对应系统版本的JDK,点击下载后需要先登录下Oracle才能下载，没有账户的需要注册。这里以安装jdk-8u281-windows-x64.exe为例。&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616725147722.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;下载后双击即可安装，如下图：&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616725491526.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+更改jdk安装路径（也可以采用默认安装在C盘），这里我安装的是D:\Program Files\Java\jdk1.8.0_281\目录（后面配置环境变量有用），然后下一步。&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616725795369.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+更改jre安装路径（也可以采用默认安装位置），下一步。&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616726173353.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616726198570.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;环境配置&#34;&gt;环境配置&lt;/h2&gt;
+&lt;h3 id=&#34;jdk环境变量配置&#34;&gt;JDK环境变量配置。&lt;/h3&gt;
+&lt;p&gt;        右键单击此电脑图标，接着点击菜单最下方的属性菜单项，或者连续打开控制面板--系统和安全--系统也可以。&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616726617329.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+在弹出的对话框中单击”高级“选项卡，接着点击下方的环境变量：&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616726633980.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;首先配置java_home&#34;&gt;首先配置JAVA_HOME。&lt;/h3&gt;
+&lt;p&gt;        为了后续可能会加入不同的JDK版本，能够做到简单，我们通过配置JAVA_HOME,来获取bin目录之前的目录结构。&lt;br&gt;
+        在环境变量对话框中的系统变量中点击“新建”按钮，在弹出的新建系统变量里的变量名中输入JAVA_HOME，在变量值中输入JDK的根目录： D:\Program Files\Java\jdk1.8.0_281\ ，然后点击确定，返回环境变量对话框。&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616726802759.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;classpath变量&#34;&gt;ClassPath变量&lt;/h3&gt;
+&lt;p&gt;        classpath是存放字节码文件的路径，可以是任意的路径，当执行java命令时，系统会在classpath的路径下自动寻找相应的.class字节码文件。&lt;/p&gt;
+&lt;p&gt;        Jdk1.5版本以后无需配置classpath&lt;/p&gt;
+&lt;h3 id=&#34;最后配置path变量&#34;&gt;最后配置Path变量&lt;/h3&gt;
+&lt;p&gt;        找到Path变量，双击编辑 Path变量。点击新建，变量值为%JAVA_HOME%\bin ，并将它移到最前端，然后点击确定。&lt;br&gt;
+&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616727646033.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;检验是否配置成功&#34;&gt;检验是否配置成功&lt;/h2&gt;
+&lt;h3 id=&#34;按键盘winr打开运行输入cmd-指令点击确定进入命令行窗口&#34;&gt;按键盘win+R，打开运行，输入cmd 指令，点击确定进入命令行窗口。&lt;/h3&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616727796710.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;输入java-version获取当前安装的-jdk-的版本信息注意java后面有个空格出现下图所示输出则说明jdk安装成功&#34;&gt;输入java -version获取当前安装的 jdk 的版本信息（注意：java后面有个空格），出现下图所示输出，则说明jdk安装成功。&lt;/h3&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://junhaoyigu.github.io/post-images/1616727904941.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">Windows10系统下JDK1.8安装及环境配置</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://junhaoyigu.github.io/post/mysql-lian-jie-bu-shang-cuo-wu-host-xxxxxxxxxxxx-is-not-allowed-to-connect-to-this-mysqlmariadb-server/"" data-c="
